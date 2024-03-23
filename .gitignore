@@ -1,0 +1,17 @@
+*.a
+*.out
+*.o
+*~
+*.dSYM
+*.exe
+.DS_Store
+layer*
+L*
+log
+transversal_line_stab_orb_*
+
+
+.*
+!/.gitignore
+
+_config.yml
