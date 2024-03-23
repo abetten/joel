@@ -345,7 +345,7 @@ void line_sets_with_transversal::classify(
 		cout << "line_sets_with_transversal::classify "
 				"before downstep" << endl;
 	}
-	downstep(verbose_level);
+	downstep(verbose_level - 1);
 	if (f_v) {
 		cout << "line_sets_with_transversal::classify "
 				"after downstep" << endl;
@@ -360,7 +360,7 @@ void line_sets_with_transversal::classify(
 		cout << "line_sets_with_transversal::classify "
 				"before upstep" << endl;
 	}
-	upstep(verbose_level);
+	upstep(verbose_level - 1);
 	if (f_v) {
 		cout << "line_sets_with_transversal::classify "
 				"after upstep" << endl;
@@ -412,7 +412,7 @@ void line_sets_with_transversal::downstep(
 				Classify_line_sets_with_transversal,
 				this,
 				po,
-				verbose_level);
+				verbose_level - 2);
 		if (f_v) {
 			cout << "line_sets_with_transversal::downstep "
 					"po = " << po << endl;
@@ -462,7 +462,7 @@ void line_sets_with_transversal::downstep(
 		NULL, // void (*func_to_free_received_trace)(void *trace_result, void *data, int verbose_level)
 		NULL, // void (*func_latex_report_trace)(std::ostream &ost, void *trace_result, void *data, int verbose_level)
 		NULL, // void *free_received_trace_data
-		verbose_level);
+		verbose_level - 1);
 
 	if (f_v) {
 		cout << "line_sets_with_transversal::downstep "
@@ -499,7 +499,7 @@ void line_sets_with_transversal::downstep(
 					false /*f_long_orbit*/,
 					dataset,
 					Stab_gens,
-					verbose_level);
+					verbose_level - 1);
 			Po[nb_f + so] = po;
 		}
 
@@ -686,7 +686,7 @@ void line_sets_with_transversal::upstep(
 					size,
 					dataset3 /* canonical_set */, Elt_transporter,
 					po2, so2,
-					verbose_level);
+					verbose_level - 2);
 			if (f_v) {
 				cout << "line_sets_with_transversal::upstep "
 						"after First_level->trace_flag" << endl;

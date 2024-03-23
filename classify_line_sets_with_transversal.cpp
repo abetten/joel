@@ -62,7 +62,7 @@ void classify_line_sets_with_transversal::init(
 
 
 	if (f_v) {
-		cout << "classify_line_sets_with_transversal::init" << endl;
+		cout << "classify_line_sets_with_transversal::init verbose_level = " << verbose_level << endl;
 	}
 	classify_line_sets_with_transversal::PG = PG;
 	classify_line_sets_with_transversal::target_size = target_size;
@@ -127,7 +127,7 @@ void classify_line_sets_with_transversal::init(
 				"creating action on lines" << endl;
 	}
 	A_on_lines = A->Induced_action->induced_action_on_grassmannian(
-			2, verbose_level);
+			2, verbose_level - 2);
 	if (f_v) {
 		cout << "classify_line_sets_with_transversal::init "
 				"creating action on lines done" << endl;
@@ -152,7 +152,7 @@ void classify_line_sets_with_transversal::init(
 			f_load_save,
 			prefix0,
 			Orbit_of_transversal_line,
-			verbose_level);
+			verbose_level - 2);
 	if (f_v) {
 		cout << "classify_line_sets_with_transversal::init "
 				"after Orbits.orbits_on_points" << endl;
@@ -171,7 +171,7 @@ void classify_line_sets_with_transversal::init(
 				"before Orbit_of_transversal_line->stabilizer_of" << endl;
 	}
 	Orbit_of_transversal_line->stabilizer_of(
-			0 /* orbits_idx */, Stab_transversal_line, verbose_level);
+			0 /* orbits_idx */, Stab_transversal_line, verbose_level - 2);
 	if (f_v) {
 		cout << "classify_line_sets_with_transversal::init "
 				"after Orbit_of_transversal_line->stabilizer_of" << endl;
@@ -194,7 +194,7 @@ void classify_line_sets_with_transversal::init(
 			A_on_lines,
 			Orbit_of_transversal_line,
 			target_size,
-			verbose_level);
+			verbose_level - 2);
 
 
 	int i;
@@ -211,13 +211,13 @@ void classify_line_sets_with_transversal::init(
 				A_on_lines,
 				i,
 				this,
-				verbose_level);
+				verbose_level - 2);
 
 	}
 
 	Lifting[0].init_seed(Seed, verbose_level);
 	for (i = 1; i <= target_size; i++) {
-		Lifting[i].init_previous_one(&Lifting[i - 1], verbose_level);
+		Lifting[i].init_previous_one(&Lifting[i - 1], verbose_level - 2);
 	}
 	if (f_v) {
 		cout << "classify_line_sets_with_transversal::init "
@@ -228,7 +228,7 @@ void classify_line_sets_with_transversal::init(
 		cout << "classify_line_sets_with_transversal::init "
 				"before compute_linear_complex" << endl;
 	}
-	compute_linear_complex(verbose_level);
+	compute_linear_complex(verbose_level - 2);
 	if (f_v) {
 		cout << "classify_line_sets_with_transversal::init "
 				"after compute_linear_complex" << endl;
@@ -248,7 +248,7 @@ void classify_line_sets_with_transversal::init(
 			cout << "classify_line_sets_with_transversal::init "
 					"before Lifting[" << i << "].classify" << endl;
 		}
-		Lifting[i].classify(verbose_level);
+		Lifting[i].classify(verbose_level - 2);
 		if (f_v) {
 			cout << "classify_line_sets_with_transversal::init "
 					"after Lifting[" << i << "].classify" << endl;

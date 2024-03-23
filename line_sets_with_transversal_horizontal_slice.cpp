@@ -56,7 +56,7 @@ void line_sets_with_transversal_horizontal_slice::init(
 
 
 	if (f_v) {
-		cout << "line_sets_with_transversal_horizontal_slice::init" << endl;
+		cout << "line_sets_with_transversal_horizontal_slice::init verbose_level = " << verbose_level << endl;
 	}
 	line_sets_with_transversal_horizontal_slice::Classify_line_sets_with_transversal = Classify_line_sets_with_transversal;
 	line_sets_with_transversal_horizontal_slice::Lifting = Lifting;
@@ -92,7 +92,7 @@ void line_sets_with_transversal_horizontal_slice::init(
 	Lifting->get_admissible_set(
 			po /* orbit_idx */,
 			old_admissible_set, old_admissible_set_size,
-			verbose_level);
+			verbose_level - 2);
 	if (f_v) {
 		cout << "line_sets_with_transversal_horizontal_slice::init "
 				"after Lifting->get_admissible_set" << endl;
@@ -118,7 +118,7 @@ void line_sets_with_transversal_horizontal_slice::init(
 	}
 	R = Lifting->get_previous_set_and_stabilizer(
 			po /* orbit_at_level */,
-			verbose_level);
+			verbose_level - 2);
 	if (f_v) {
 		cout << "line_sets_with_transversal_horizontal_slice::init "
 				"after Lifting->get_previous_set_and_stabilizer" << endl;
