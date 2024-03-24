@@ -20,7 +20,7 @@ line_sets_with_transversal_seed::line_sets_with_transversal_seed()
 	A = NULL;
 	A_on_lines = NULL;
 	size = 1;
-	target_size = 0;
+	//target_size = 0;
 	Orbit_of_transversal_line = NULL;
 }
 
@@ -35,7 +35,7 @@ void line_sets_with_transversal_seed::init(
 		actions::action *A,
 		actions::action *A_on_lines,
 		groups::orbits_on_something *Orbit_of_transversal_line,
-		int target_size,
+		//int target_size,
 		int verbose_level)
 {
 	int f_v = (verbose_level >= 1);
@@ -49,7 +49,7 @@ void line_sets_with_transversal_seed::init(
 	line_sets_with_transversal_seed::A_on_lines = A_on_lines;
 	line_sets_with_transversal_seed::Orbit_of_transversal_line = Orbit_of_transversal_line;
 	line_sets_with_transversal_seed::size = 1;
-	line_sets_with_transversal_seed::target_size = target_size;
+	//line_sets_with_transversal_seed::target_size = target_size;
 	if (f_v) {
 		cout << "line_sets_with_transversal_seed::init done" << endl;
 	}

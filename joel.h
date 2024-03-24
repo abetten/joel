@@ -25,7 +25,7 @@ public:
 	actions::action *A_on_lines;
 
 	int size; // = 1
-	int target_size;
+	//int target_size;
 
 	groups::orbits_on_something *Orbit_of_transversal_line;
 		// the orbit of transversal_line_rk
@@ -37,7 +37,7 @@ public:
 			actions::action *A,
 			actions::action *A2,
 			groups::orbits_on_something *Orbit_of_transversal_line,
-			int target_size,
+			//int target_size,
 			int verbose_level);
 	int nb_orbits();
 	void get_admissible_set(
@@ -50,6 +50,8 @@ public:
 			int orbit_idx, int verbose_level);
 
 };
+
+//! Compute the flag orbits associated with one input orbit
 
 class line_sets_with_transversal_horizontal_slice {
 
@@ -115,6 +117,8 @@ public:
 	actions::action *A_on_lines;
 
 	int size;
+	// the relation is between sets of size 'size'
+	// and sets of size 'size + 1'.
 
 	int f_has_seed;
 	line_sets_with_transversal_seed *Seed;
@@ -125,6 +129,8 @@ public:
 	line_sets_with_transversal_horizontal_slice *Horizontal_slice; // [nb_orbits_in]
 
 	int nb_orbits_in;
+	// Number of orbits of the group
+	// on sets of size 'size'.
 	int nb_flag_orbits;
 
 	int pt_representation_sz; // size + 1
@@ -135,7 +141,12 @@ public:
 	invariant_relations::flag_orbits *Flag_orbits;
 
 	int *Po; // [nb_flag_orbits]
+	// Po[f] is the orbit index in the set of input orbit
+	// corresponding to a given flag orbit f.
+
 	graph_theory::layered_graph **Trees; // [nb_flag_orbits]
+	// Tree representation of the Schreier tree associated
+	// with a given flag orbit.
 
 	// output orbits:
 	invariant_relations::classification_step *Next_one;

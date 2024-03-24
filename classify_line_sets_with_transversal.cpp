@@ -171,7 +171,8 @@ void classify_line_sets_with_transversal::init(
 				"before Orbit_of_transversal_line->stabilizer_of" << endl;
 	}
 	Orbit_of_transversal_line->stabilizer_of(
-			0 /* orbits_idx */, Stab_transversal_line, verbose_level - 2);
+			0 /* orbits_idx */, Stab_transversal_line,
+			verbose_level - 2);
 	if (f_v) {
 		cout << "classify_line_sets_with_transversal::init "
 				"after Orbit_of_transversal_line->stabilizer_of" << endl;
@@ -193,7 +194,7 @@ void classify_line_sets_with_transversal::init(
 			A,
 			A_on_lines,
 			Orbit_of_transversal_line,
-			target_size,
+			//target_size,
 			verbose_level - 2);
 
 
